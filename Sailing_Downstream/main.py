@@ -2,8 +2,10 @@ def process_list(input_list):
     if len(input_list) % 10 != 0:
         raise ValueError("Input list length must be a multiple of 10")
 
-    output_list = [num for idx, num in enumerate(input_list) if (idx + 1) % 2 != 0 and (idx + 1) % 3 != 0]
+    output_list = [num for idx, num in enumerate(input_list, start=1) if idx % 2 != 0 or idx % 3 != 0]
     return output_list
+
+
 
 if __name__ == "__main__":
     try:
